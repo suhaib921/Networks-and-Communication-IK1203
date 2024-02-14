@@ -41,7 +41,6 @@ public class TCPClient {
             }
 
             buffer.flush();
-            socket.close();
             return buffer.toByteArray();
         } catch (IOException e) {
             throw new IOException("Error communicating with server: " + e.getMessage());
