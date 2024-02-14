@@ -1,0 +1,11 @@
+Sockets API?
+what are use the read and write methods on the socket's getInputStream() and getOutputStream()?
+
+use Socket 
+use ServerSocket
+use getBytes method on a String to convert it to a byte array
+use write method on the OutputStream to transmit the bytes.
+use getInputStream() to read from socket
+use getOutputStream() to write to the socket
+use wrapper classes for encoding/decoding, buffering, etc
+DataInputStream and DataOutputStream are convenient wrapper classes for InputStream and OutputStream 
