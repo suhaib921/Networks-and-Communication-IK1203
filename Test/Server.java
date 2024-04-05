@@ -8,13 +8,13 @@ public class Server {
     this.serverSocket = serverSocket;
    }
 
-   public void startServer() throws Exception {
+   public void startServer(){
         try {
             while (!serverSocket.isClosed()) {
                 Socket socket = serverSocket.accept();
                 System.out.println("A new client has connected.");
                 
-                TCPClientHandler clientHandler = new TCPClientHandler(socket); //run the clas runnable
+                ClientHandler clientHandler = new ClientHandler(socket); //run the clas runnable
 
                 Thread thread = new Thread(clientHandler);
                 thread.start();

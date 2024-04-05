@@ -1,10 +1,7 @@
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.Socket;
-
 import tcpclient.TCPClient;
 
+import java.net.*;
+import java.io.*;
 public class TCPAsk {
     /*
      * Usage: explain how to use the program, then exit with failure status

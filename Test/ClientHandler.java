@@ -1,10 +1,4 @@
-package Test;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 public class ClientHandler implements Runnable {
@@ -28,9 +22,8 @@ public class ClientHandler implements Runnable {
     } catch (IOException e) {
         closeEverything(socket, bufferedReader, bufferedWriter);
     }
+}
     
-    
-    @Override
     public void run() {
         String messageFromClient;
 

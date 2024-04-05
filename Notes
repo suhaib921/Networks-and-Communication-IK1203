@@ -9,3 +9,51 @@ use getInputStream() to read from socket
 use getOutputStream() to write to the socket
 use wrapper classes for encoding/decoding, buffering, etc
 DataInputStream and DataOutputStream are convenient wrapper classes for InputStream and OutputStream 
+
+Task 2: 
+
+java TCPAsk time.nist.gov 13
+
+
+Daytime - java.lab.ssvl.kth.se
+
+java TCPAsk java.lab.ssvl.kth.se 13
+
+
+Whois - whois.iis.se
+För att söka efter information om en domän, en IP-adress eller ett AS-nummer hos den svenska internetstiftelsen:
+
+java TCPAsk whois.iis.se 43 "kth.se"
+
+
+Whois - whois.internic.net
+För att söka efter information om en domän, en IP-adress eller ett AS-nummer hos ICANN:
+
+java TCPAsk whois.internic.net 43 "example.com"
+
+
+Echo - java.lab.ssvl.kth.se
+För att skicka en sträng till echo-tjänsten och få tillbaka samma sträng:
+
+java TCPAsk --shutdown java.lab.ssvl.kth.se 7 "Hello World"
+
+
+Discard - java.lab.ssvl.kth.se
+För att skicka en sträng till discard-tjänsten (notera att du inte kommer att få något svar eftersom tjänsten kastar all data den tar emot):
+
+java TCPAsk --shutdown java.lab.ssvl.kth.se 9 "Discard this"
+
+
+Chargen - java.lab.ssvl.kth.se
+För att få en ström av tecken genererade av chargen-tjänsten:
+
+java TCPAsk --shutdown --limit 50 java.lab.ssvl.kth.se 19
+java TCPAsk --shutdown --limit 50 --timeout 5 java.lab.ssvl.kth.se 19
+
+Task 3:
+http://localhost:8129/ask?hostname=whois.iis.se&port=43&string=kth.se%0A
+http://localhost:8129/ask?hostname=whois.iis.se&port=43&string=kth.se%0A&shutdown=true
+http://localhost:8129/ask?hostname=whois.iis.se&port=43&string=kth.se%0A&shutdown=true&limit=512
+http://localhost:8129/ask?hostname=whois.iis.se&port=43&string=kth.seasdasd%0A&shutdown=true&limit=512&timeout=2000
+http://localhost:8129/ask?hostname=time.nist.gov&limit=1200&port=13
+

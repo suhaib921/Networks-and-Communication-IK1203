@@ -1,8 +1,6 @@
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.Socket;
+package Task1.tcpclient;
+import java.net.*;
+import java.io.*;
 
 public class TCPClient {
     private static int BUFFERSIZE = 1024;
@@ -26,7 +24,6 @@ public class TCPClient {
 
             // Send data to server if bytesToServer is not empty
             if (bytesToServer != null && bytesToServer.length > 0) {
-                outToServer = socket.getOutputStream();
                 outToServer.write(bytesToServer);
                 outToServer.flush(); // Ensure data is sent
             }
